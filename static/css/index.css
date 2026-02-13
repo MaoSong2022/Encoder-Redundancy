@@ -341,6 +341,35 @@ body {
   margin-bottom: 1.5rem;
 }
 
+/* Highlight hyperlinks in main content (section/hero only; footer keeps its own link style) */
+.section .content a:not(.button):not(.external-link),
+.hero .content a:not(.button):not(.external-link) {
+  color: #0d9488;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(13, 148, 136, 0.4);
+  text-underline-offset: 3px;
+  transition: var(--transition);
+}
+
+.section .content a:not(.button):not(.external-link):hover,
+.hero .content a:not(.button):not(.external-link):hover {
+  color: #0f766e;
+  text-decoration-color: #0d9488;
+}
+
+.section .content a:not(.button):not(.external-link):visited,
+.hero .content a:not(.button):not(.external-link):visited {
+  color: #5b21b6;
+  text-decoration-color: rgba(91, 33, 182, 0.4);
+}
+
+.section .content a:not(.button):not(.external-link):visited:hover,
+.hero .content a:not(.button):not(.external-link):visited:hover {
+  color: #6d28d9;
+  text-decoration-color: #5b21b6;
+}
+
 /* Footer Improvements */
 .footer {
   background: var(--background-secondary);

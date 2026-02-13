@@ -27,8 +27,6 @@ To start using the template click on `Use this Template`.
 The template uses html for controlling the content and css for controlling the style. 
 To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
 
-**IMPORTANT!** Make sure to replace the `favicon.ico` under `static/images/` with one of your own, otherwise your favicon is going to be a dreambooth image of me.
-
 ## What's New
 
 - Modern, clean design with better mobile support
@@ -69,8 +67,7 @@ Create a 1200x630px social preview image at `static/images/social_preview.png`.
 ## Tips
 
 - Compress images with [TinyPNG](https://tinypng.com)
-- Use YouTube for large videos (>10MB)  
-- Replace the favicon in `static/images/`
+- Use YouTube for large videos (>10MB)
 - Works with GitHub Pages
 
 ## Acknowledgments
