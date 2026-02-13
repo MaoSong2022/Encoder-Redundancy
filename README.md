@@ -5,7 +5,7 @@
 [![Project Page](https://img.shields.io/badge/Project_Page-encoder--redundancy.github.io-blue)](https://encoder-redundancy.github.io/)
 [![arXiv](https://img.shields.io/badge/arXiv-2507.03262-b31b1b)](https://arxiv.org/abs/2507.03262)
 [![OpenReview](https://img.shields.io/badge/OpenReview-Forum-green)](https://openreview.net/forum?id=cAopJVLKvi)
-[![Hugging Face](https://img.shields.io/badge/🤗_Models-Encoder--Redundancy-yellow)](https://huggingface.co/Encoder-Redundancy)
+[![Hugging Face](https://img.shields.io/badge/🤗_Models-Encoder--Redundancy-yellow)](https://huggingface.co/collections/DiDisama/finetuned-eagle-models)
 
 **Authors:** Yizhou Wang\*, Song Mao\*, Yang Chen\*, Yufan Shen, Yinqiao Yan, Pinlong Cai, Ding Wang, Guohang Yan, Zhi Yu, Xuming Hu, Botian Shi  
 **Affiliation:** Shanghai AI Lab, HKUST(GZ), Zhejiang University, Beijing University of Technology  
@@ -35,8 +35,8 @@ Furthermore, **single- and dual-encoder variants recover over 90% of baseline** 
 | **Project page** (paper, figures, case studies, results) | [encoder-redundancy.github.io](https://encoder-redundancy.github.io/) |
 | **arXiv** | [arxiv.org/abs/2507.03262](https://arxiv.org/abs/2507.03262) |
 | **OpenReview** | [openreview.net/forum?id=cAopJVLKvi](https://openreview.net/forum?id=cAopJVLKvi) |
-| **Code** | [github.com/Encoder-Redundancy/Encoder-Redundancy](https://github.com/Encoder-Redundancy/Encoder-Redundancy) |
-| **Models** | [huggingface.co/Encoder-Redundancy](https://huggingface.co/Encoder-Redundancy) |
+| **Code** | [github.com/Encoder-Redundancy/Encoder-Redundancy](https://github.com/1zhou-Wang/Investigating_MultiEncoder_Redundancy) |
+| **Models** | [huggingface.co/Encoder-Redundancy](https://huggingface.co/collections/DiDisama/finetuned-eagle-models) |
 
 The project page (`index.html`) includes:
 
