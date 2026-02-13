@@ -1,77 +1,87 @@
-# Academic Project Page Template
+# Investigating Redundancy in Multimodal Large Language Models with Multiple Vision Encoders
 
-> **Update (September 2025)**: This template has been modernized with better design, SEO, and mobile support. For the original version, see the [original-version branch](https://github.com/eliahuhorwitz/Academic-project-page-template/tree/original-version).
+**ICLR 2026**
 
-A clean, responsive template for academic project pages.
+[![Project Page](https://img.shields.io/badge/Project_Page-encoder--redundancy.github.io-blue)](https://encoder-redundancy.github.io/)
+[![arXiv](https://img.shields.io/badge/arXiv-2507.03262-b31b1b)](https://arxiv.org/abs/2507.03262)
+[![OpenReview](https://img.shields.io/badge/OpenReview-Forum-green)](https://openreview.net/forum?id=cAopJVLKvi)
+[![Hugging Face](https://img.shields.io/badge/🤗_Models-Encoder--Redundancy-yellow)](https://huggingface.co/Encoder-Redundancy)
 
+**Authors:** Yizhou Wang\*, Song Mao\*, Yang Chen\*, Yufan Shen, Yinqiao Yan, Pinlong Cai, Ding Wang, Guohang Yan, Zhi Yu, Xuming Hu, Botian Shi  
+**Affiliation:** Shanghai AI Lab, HKUST(GZ), Zhejiang University, Beijing University of Technology  
+*\*Equal contribution. † Work done during internship at Shanghai AI Lab.*
 
-Example project pages built using this template are:
-- https://horwitz.ai/probex
-- https://vision.huji.ac.il/probegen
-- https://horwitz.ai/mother
-- https://horwitz.ai/spectral_detuning
-- https://vision.huji.ac.il/ladeda
-- https://vision.huji.ac.il/dsire
-- https://horwitz.ai/podd
-- https://dreamix-video-editing.github.io
-- https://horwitz.ai/conffusion
-- https://horwitz.ai/3d_ads/
-- https://vision.huji.ac.il/ssrl_ad
-- https://vision.huji.ac.il/deepsim
+---
 
+## Abstract
 
+Recent multimodal large language models (MLLMs) increasingly integrate multiple vision encoders to improve performance on various benchmarks, assuming that diverse pretraining objectives yield complementary visual signals. However, we show this assumption often fails in practice. Through systematic encoder masking across representative multi-encoder MLLMs, we find that **performance typically degrades gracefully—and sometimes even improves—** when selected encoders are masked, revealing **pervasive encoder redundancy**.
 
-## Start using the template
-To start using the template click on `Use this Template`.
+To quantify this effect, we introduce two principled metrics:
 
-The template uses html for controlling the content and css for controlling the style. 
-To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
+- **Conditional Utilization Rate (CUR)** — measures an encoder’s marginal contribution in the presence of others.
+- **Information Gap (IG)** — captures heterogeneity in encoder utility within a model.
 
-## What's New
+Using these tools, we observe: (i) strong specialization on tasks like **OCR & Chart**, where a single encoder can dominate (CUR >90%); (ii) **high redundancy** on general VQA and knowledge-based tasks, where encoders are largely interchangeable; (iii) instances of **detrimental encoders** with negative CUR. Notably, masking specific encoders can yield up to **16%** higher accuracy on a task category and **3.6%** overall performance boost compared to the full model.
 
-- Modern, clean design with better mobile support
-- Improved SEO with proper meta tags and structured data
-- Performance improvements (lazy loading, optimized assets)
-- More Works dropdown
-- Copy button for BibTeX citations
-- Better accessibility
+Furthermore, **single- and dual-encoder variants recover over 90% of baseline** on most non-OCR tasks with substantially lower training resources and inference latency. Our analysis challenges the “more encoders are better” heuristic and provides actionable diagnostics for developing more efficient multimodal architectures.
 
-## Components
+---
 
-- Teaser video
-- Image carousel
-- YouTube video embedding
-- Video carousel
-- PDF poster viewer
+## Project Page & Resources
+
+| Resource | Link |
+|----------|------|
+| **Project page** (paper, figures, case studies, results) | [encoder-redundancy.github.io](https://encoder-redundancy.github.io/) |
+| **arXiv** | [arxiv.org/abs/2507.03262](https://arxiv.org/abs/2507.03262) |
+| **OpenReview** | [openreview.net/forum?id=cAopJVLKvi](https://openreview.net/forum?id=cAopJVLKvi) |
+| **Code** | [github.com/Encoder-Redundancy/Encoder-Redundancy](https://github.com/Encoder-Redundancy/Encoder-Redundancy) |
+| **Models** | [huggingface.co/Encoder-Redundancy](https://huggingface.co/Encoder-Redundancy) |
+
+The project page (`index.html`) includes:
+
+- Teaser and motivation
+- Case studies (encoder masking effects)
+- Method (CUR, IG, architectures, benchmarks)
+- Key results (redundancy analysis, re-trained vs. original, efficiency)
 - BibTeX citation
 
-## Customization
+---
 
-The HTML file has TODO comments showing what to replace:
+## Key Results (Summary)
 
-- Paper title, authors, institution, conference
-- Links (arXiv, GitHub, etc.)
-- Abstract and descriptions  
-- Videos, images, and PDFs
-- Related works in the dropdown
-- Meta tags for SEO and social sharing
+1. **Pervasive encoder redundancy** — Across Eagle, Cambrian-1, I-MoF, Eagle2, DeepSeek-VL, performance degrades gracefully (or improves) when encoders are masked.
+2. **Efficiency** — For Eagle-X5 7B, a dual-encoder variant (Eagle-X2 7B) reaches **94%** of full model performance with **~34%** training time reduction; masking three encoders at inference reduces latency by **19.5%** with &lt;4% performance drop.
+3. **Dual-encoder variants** — Consistently recover **&gt;90%** of baseline on most non-OCR tasks with lower training and inference cost.
 
-### Meta Tags
-The template includes meta tags for better search engine visibility and social media sharing. These appear in the `<head>` section and help with:
-- Google Scholar indexing
-- Social media previews (Twitter, Facebook, LinkedIn)
-- Search engine optimization
+---
 
-Create a 1200x630px social preview image at `static/images/social_preview.png`.
+## Repository Structure
 
-## Tips
+- `index.html` — Project page (paper description, figures, method, results).
+- `static/` — CSS, JS, images, and PDFs used by the project page.
 
-- Compress images with [TinyPNG](https://tinypng.com)
-- Use YouTube for large videos (>10MB)
-- Works with GitHub Pages
+---
+
+## Citation
+
+If you find this work useful, please cite:
+
+```bibtex
+@inproceedings{wang2026investigating,
+  title     = {Investigating Redundancy in Multimodal Large Language Models with Multiple Vision Encoders},
+  author    = {Wang, Yizhou and Mao, Song and Chen, Yang and Shen, Yufan and Yan, Yinqiao and Cai, Pinlong and Wang, Ding and Yan, Guohang and Yu, Zhi and Hu, Xuming and Shi, Botian},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2026}
+}
+```
+
+---
 
 ## Acknowledgments
-Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
 
-## Website License
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+The project page is based on the [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template). Parts were adopted from [Nerfies](https://nerfies.github.io/).
+
+## License
+
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
